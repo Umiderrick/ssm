@@ -1,0 +1,635 @@
+/* slidebar 样式 & 悬浮样式 & 焦点样式 */
+.slidebar {
+  position: fixed;
+  padding-top: 50px;
+  left: 0px;
+  float: left;
+  display: block;
+  height: 100%;
+  background-color: #99C0FF;
+}
+.slidebar .on {
+  background-color: #ffffff!important;
+  border: 1px solid #E1ECFF!important;
+  color: #99C0FF !important;
+}
+.slidebar .slide-button {
+  height: 100px;
+  width: 50px;
+  background-color: #99C0FF;
+  color: #ffffff;
+  text-align: center;
+  padding-top: 24px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+}
+.slidebar .slide-button i {
+  font-size: 30px;
+}
+.slidebar .slide-button p {
+  font-size: 12px;
+}
+.slidebar .slide-button:hover {
+  color: #99C0FF;
+  background-color: #ffffff;
+  border: 1px solid #E1ECFF;
+}
+/* 搜索框前的选项 */
+.search-select {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  height: 40px;
+  width: 120px;
+  border: 1px solid #E7E7E6;
+  padding-left: 10px;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+.search-select:after {
+  width: 0px;
+  height: 0px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 20px solid #cccccc;
+  content: '';
+}
+.search-bar:before {
+  position: absolute;
+  top: 16px;
+  left: 100px;
+  width: 0px;
+  height: 0px;
+  display: block;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 10px solid #cccccc;
+  content: '';
+}
+/* main-board 样式 */
+.main-board {
+  height: 100%;
+  width: 100%;
+  background-color: #F7F7F7;
+  padding: 90px 0px 0px 120px;
+  /* 全部功能模块 */
+}
+.main-board .explain {
+  position: fixed;
+  font-size: 80px;
+  color: rgba(255, 255, 255, 0.9);
+  top: 50%;
+  left: 34%;
+  z-index: 1;
+}
+.main-board .function-bar {
+  width: 100%;
+  /* 搜索框 */
+  /* 右侧功能按钮 */
+  /* 筛选功能板 */
+}
+.main-board .function-bar .search-bar {
+  position: relative;
+  float: left;
+  width: 60%;
+}
+.main-board .function-bar .search-bar .search-input {
+  border-radius: 5px;
+  border: 1px solid #E7E7E6;
+  height: 40px;
+  width: 70%;
+  padding-left: 10px;
+}
+.main-board .function-bar .search-bar .submit-search {
+  border: 0px;
+  border-radius: 5px;
+  height: 37px;
+  width: 80px;
+  margin-left: 15px;
+  letter-spacing: 3px;
+  background-color: #5A91FF;
+  color: #ffffff;
+  transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+}
+.main-board .function-bar .search-bar .submit-search:hover {
+  background-color: #99C0FF;
+}
+.main-board .function-bar .main-function {
+  position: relative;
+  margin-top: -20px;
+  padding-right: 20px;
+  float: left;
+  width: 40%;
+  display: inline-block;
+}
+.main-board .function-bar .main-function .function-button {
+  float: right;
+  display: inline-block;
+  margin: 0px 15px;
+}
+.main-board .function-bar .main-function .function-button i {
+  font-size: 50px;
+  color: #5A91FF;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+}
+.main-board .function-bar .main-function .function-button i:hover {
+  color: #99C0FF;
+}
+.main-board .function-bar .main-function .function-button .batch-change-color {
+  color: #FFB42E;
+}
+.main-board .function-bar .main-function .function-button .batch-change-color:hover {
+  color: #FFCE76;
+}
+.main-board .function-bar .main-function .function-button p {
+  text-align: center;
+}
+.main-board .function-bar .filter-bar .filter-detail .filter-condition {
+  background-color: #5A91FF;
+  border-radius: 20px;
+  color: #ffffff;
+  text-align: center;
+  height: 24px;
+  padding: 2px 10px 0px 10px;
+  display: inline-block;
+}
+.main-board .function-bar .filter-bar .filter-detail .order-num {
+  color: #5A91FF;
+}
+.main-board .function-bar .filter-bar .filter-detail .product-num {
+  color: #5A91FF;
+}
+.main-board .function-bar .filter-bar .filter-choice {
+  width: 100%;
+  margin-top: 20px;
+}
+.main-board .function-bar .filter-bar .filter-choice .filter-option {
+  display: inline-block;
+  height: 50px;
+  text-align: center;
+}
+.main-board .function-bar .filter-bar .filter-choice .filter-option p {
+  width: 36px;
+  font-size: 16px;
+  text-align: center;
+  display: block;
+  margin: auto;
+  cursor: pointer;
+}
+.main-board .function-bar .filter-bar .filter-choice .filter-option .fix {
+  position: relative;
+  top: -20px;
+}
+.main-board .function-bar .filter-bar .filter-choice .filter-option i {
+  color: #5A91FF;
+  cursor: pointer;
+}
+.main-board .function-bar .filter-bar .filter-choice .filter-option .batch-change-icon {
+  display: block;
+  font-size: 30px;
+  color: #FFB42E;
+  margin-top: -10px;
+  display: none;
+}
+.main-board .function-bar .filter-bar .filter-choice .filter-option .batch-change-icon:hover {
+  color: #FFCE76;
+}
+.main-board .function-bar .filter-bar .filter-choice .width5 {
+  width: 5%;
+}
+.main-board .function-bar .filter-bar .filter-choice .width10 {
+  width: 10%;
+}
+.main-board .function-bar .filter-bar .filter-choice .width8 {
+  width: 8%;
+}
+.main-board .function-bar .filter-bar .filter-choice .width3 {
+  width: 3%;
+}
+/* 筛选框通用样式 */
+.filter-board {
+  display: none;
+  width: 200px;
+  position: absolute;
+  border-radius: 10px;
+  background-color: #5A91FF;
+  color: #ffffff;
+  padding: 10px;
+  top: 300px;
+  box-shadow: 0px 0px 10px #99C0FF;
+  z-index: 999;
+}
+.filter-board h5 {
+  text-align: left;
+}
+.filter-board .triangle {
+  position: absolute;
+  font-size: 40px;
+  top: -35px;
+  left: 40%;
+}
+.filter-board .select-button {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 5px;
+  border-top: 2px solid rgba(255, 255, 255, 0.5);
+}
+.filter-board .select-button i {
+  font-size: 20px;
+  color: #ffffff!important;
+}
+.filter-board .select-button button {
+  background-color: #5A91FF;
+  outline: 0px;
+  border: 0px;
+  width: 70px;
+  height: 30px;
+  font-size: 16px;
+  font-weight: 100;
+  color: rgba(255, 255, 255, 0.5);
+  transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+}
+.filter-board .select-button button:hover {
+  color: #ffffff;
+}
+/* 订单状态筛选框样式 */
+.batch-change-order-status-board,
+.filter-order-status-board {
+  left: 3%;
+}
+.batch-change-order-status-board form,
+.filter-order-status-board form {
+  text-align: center;
+}
+.batch-change-order-status-board form .order-status-content,
+.filter-order-status-board form .order-status-content {
+  width: 40%;
+  display: inline-block;
+  padding: 5px 10px 5px 10px;
+  cursor: pointer;
+}
+/* 下单日期筛选框样式 */
+.filter-order-create-board {
+  left: 8%;
+}
+.filter-order-create-board .date-choose {
+  margin-bottom: 25px;
+}
+.filter-order-create-board .date-choose p {
+  padding: 5px;
+}
+.filter-order-create-board .date-choose input {
+  color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  height: 24px;
+}
+.filter-order-create-board .date-choose .year {
+  width: 50px;
+}
+.filter-order-create-board .date-choose .month {
+  width: 34px;
+}
+.filter-order-create-board .date-choose .day {
+  width: 34px;
+}
+/* 产品颜色筛选 */
+.filter-color-board {
+  left: 15%;
+}
+.filter-color-board form {
+  text-align: center;
+}
+.filter-color-board form .color-content {
+  width: 40%;
+  display: inline-block;
+  padding: 5px 10px 5px 10px;
+}
+/* 特殊加工筛选 */
+.filter-special-need-board {
+  left: 31%;
+}
+.filter-special-need-board span {
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+.filter-special-need-board .on {
+  color: #ffffff !important;
+}
+/* 交付日期筛选 */
+.batch-change-delivery-date-board,
+.filter-delivery-date-board {
+  left: 38%;
+}
+.batch-change-delivery-date-board .date-choose,
+.filter-delivery-date-board .date-choose {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.batch-change-delivery-date-board .date-choose input,
+.filter-delivery-date-board .date-choose input {
+  color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  height: 24px;
+}
+.batch-change-delivery-date-board .date-choose .year,
+.filter-delivery-date-board .date-choose .year {
+  width: 50px;
+}
+.batch-change-delivery-date-board .date-choose .month,
+.filter-delivery-date-board .date-choose .month {
+  width: 34px;
+}
+.batch-change-delivery-date-board .date-choose .day,
+.filter-delivery-date-board .date-choose .day {
+  width: 34px;
+}
+/* 状态筛选 */
+.filter-status-board {
+  left: 51%;
+}
+.filter-status-board span {
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+.filter-status-board .on {
+  color: #ffffff !important;
+}
+/* 发货地点筛选 */
+.batch-change-ship-from-board,
+.filter-ship-from-board {
+  left: 55%;
+}
+.batch-change-ship-from-board span,
+.filter-ship-from-board span {
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+.batch-change-ship-from-board .on,
+.filter-ship-from-board .on {
+  color: #ffffff !important;
+}
+/* 发货时间筛选 */
+.batch-change-ship-date-board,
+.filter-ship-date-board {
+  left: 59%;
+}
+.batch-change-ship-date-board .date-choose,
+.filter-ship-date-board .date-choose {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.batch-change-ship-date-board .date-choose input,
+.filter-ship-date-board .date-choose input {
+  color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  height: 24px;
+}
+.batch-change-ship-date-board .date-choose .year,
+.filter-ship-date-board .date-choose .year {
+  width: 50px;
+}
+.batch-change-ship-date-board .date-choose .month,
+.filter-ship-date-board .date-choose .month {
+  width: 34px;
+}
+.batch-change-ship-date-board .date-choose .day,
+.filter-ship-date-board .date-choose .day {
+  width: 34px;
+}
+/* 发票筛选 */
+.filter-invoice-board {
+  left: 66%;
+}
+.filter-invoice-board span {
+  font-size: 16px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+.filter-invoice-board .on {
+  color: #ffffff !important;
+}
+/* 快递信息筛选 */
+.batch-change-express-status-board,
+.filter-express-status-board {
+  left: 75%;
+}
+.batch-change-express-status-board span,
+.filter-express-status-board span {
+  font-size: 16px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+.batch-change-express-status-board .on,
+.filter-express-status-board .on {
+  color: #ffffff !important;
+}
+/* 支付方式筛选 */
+.filter-payment-method-board {
+  left: 84%;
+}
+.filter-payment-method-board span {
+  font-size: 16px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+.filter-payment-method-board .on {
+  color: #ffffff !important;
+}
+/* 错误输入提示 */
+.filter-error-info {
+  text-align: center;
+  color: #00FF00;
+}
+/* 订单详情表格 */
+.order-detail {
+  position: relative;
+  z-index: 3;
+}
+.order-detail .order-detail-table {
+  position: relative;
+  z-index: 3;
+  margin-bottom: 100px;
+  width: 100%;
+  text-align: center;
+}
+.order-detail .order-detail-table .width5 {
+  width: 5%;
+}
+.order-detail .order-detail-table .width10 {
+  width: 10%;
+}
+.order-detail .order-detail-table .width8 {
+  width: 8%;
+}
+.order-detail .order-detail-table .width3 {
+  width: 3%;
+}
+.order-detail .order-detail-table .width6 {
+  width: 6%;
+}
+.order-detail .order-detail-table .order-detail-row {
+  cursor: pointer;
+  font-size: 13px;
+  height: 80px;
+  width: 100%;
+  border-bottom: 1px solid #F7F7F7;
+}
+.order-detail .order-detail-table .order-detail-row .batch-changed {
+  color: red;
+  font-weight: 700;
+}
+.order-detail .order-detail-table .order-detail-row .col-remark .remark {
+  width: 40%;
+  height: 80px;
+  font-size: 18px;
+  padding-top: 10px;
+  color: rgba(255, 255, 255, 0.9);
+  background-color: #99C0FF;
+  cursor: pointer;
+}
+.order-detail .order-detail-table .order-detail-row .col-remark .remark-content {
+  display: none;
+  height: 80px;
+  padding: 10px 5px 10px 5px;
+  cursor: pointer;
+}
+.order-detail .order-detail-table .order-detail-row:hover {
+  color: red;
+}
+.order-detail .order-detail-table .order-detail-row .batch-change-tag-hide {
+  position: relative;
+  color: #FFB42E;
+  left: -3px;
+  font-size: 20px;
+  display: none;
+}
+.order-detail .order-detail-table .order-detail-row .batch-change-tag-show {
+  position: relative;
+  color: #FFB42E;
+  left: -3px;
+  font-size: 20px;
+}
+.order-detail .order-detail-table .blue-row .col-1 {
+  background-color: #DEEBFF;
+}
+.order-detail .order-detail-table .blue-row .col-2 {
+  background-color: #F3F8FF;
+}
+.order-detail .order-detail-table .pink-row .col-1 {
+  background-color: #FFD9D9;
+}
+.order-detail .order-detail-table .pink-row .col-2 {
+  background-color: #FFEEEE;
+}
+.order-detail .order-detail-table .yellow-row .col-1 {
+  background-color: #FFFEDC;
+}
+.order-detail .order-detail-table .yellow-row .col-2 {
+  background-color: #FFFFF3;
+}
+.order-detail .order-detail-table .green-row .col-1 {
+  background-color: #D2FFED;
+}
+.order-detail .order-detail-table .green-row .col-2 {
+  background-color: #EEFFF8;
+}
+.order-detail .order-detail-table .gray-row .col-1 {
+  background-color: #EFEFEF;
+}
+.order-detail .order-detail-table .gray-row .col-2 {
+  background-color: #F7F7F7;
+}
+.order-detail .order-detail-table .white-row .col-1 {
+  background-color: #ffffff!important;
+}
+.order-detail .order-detail-table .white-row .col-2 {
+  background-color: #ffffff!important;
+}
+/* 批量修改框 */
+.batch-change-board {
+  display: none;
+  width: 200px;
+  position: absolute;
+  border-radius: 10px;
+  background-color: #5A91FF;
+  color: #ffffff;
+  padding: 10px;
+  top: 330px;
+  box-shadow: 0px 0px 10px #99C0FF;
+  z-index: 999;
+}
+.batch-change-board h5 {
+  text-align: left;
+}
+.batch-change-board .triangle {
+  position: absolute;
+  font-size: 40px;
+  top: -35px;
+  left: 40%;
+}
+.batch-change-board .select-button {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 5px;
+  border-top: 2px solid rgba(255, 255, 255, 0.5);
+}
+.batch-change-board .select-button i {
+  font-size: 20px;
+  color: #ffffff!important;
+}
+.batch-change-board .select-button button {
+  background-color: #5A91FF;
+  outline: 0px;
+  border: 0px;
+  width: 70px;
+  height: 30px;
+  font-size: 16px;
+  font-weight: 100;
+  color: rgba(255, 255, 255, 0.5);
+  transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+}
+.batch-change-board .select-button button:hover {
+  color: #ffffff;
+}
+/* 取消筛选条件控件样式 */
+.not-need-filter {
+  position: relative;
+  top: 5px;
+}

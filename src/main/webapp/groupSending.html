@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset = utf-8">
+    <meta name="author" content="loch">
+    <meta name="keywords" content="vinci,客服,后台,inspero">
+    <meta name="description" content="vinci 客服后台管理系统">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no"/>
+	<title>vinci 客服后台管理系统</title>
+	<link rel="stylesheet" href="/styles/bootstrap.min.css">
+	<link rel="stylesheet" href="/styles/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="/styles/layout.min.css">
+	<link rel="stylesheet" href="/styles/groupSending/groupSending.min.css">
+	<style>
+		@font-face {font-family: 'iconfont';
+		    src: url('iconfont/iconfont.eot'); /* IE9*/
+		    src: url('iconfont/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		    url('iconfont/iconfont.woff') format('woff'), /* chrome、firefox */
+		    url('iconfont/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+		    url('iconfont/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+		}
+		.iconfont {
+		  	font-family:"iconfont" !important;
+		  	font-size:16px;
+		  	font-style:normal;
+		  	-webkit-font-smoothing: antialiased;
+		 	-webkit-text-stroke-width: 0.2px;
+		  	-moz-osx-font-smoothing: grayscale;
+		}
+	</style>
+</head>
+<body>
+	<section class="header">
+		<div class="header-left">
+			<i class="iconfont vinci-logo">&#xe604;</i>
+			<span class="vinci-slogan">VINCI</span>
+			<i class="iconfont vertical-bar">&#xe62b;</i>
+			<span class="user-num">客服001号</span>
+		</div>
+		<div class="header-right">
+			<span class="header-service">客服中心</span>
+			<i class="iconfont vertical-bar">&#xe62b;</i>
+			<span class="user-name">刘小双</span>
+		</div>
+	</section>
+	<section class="slidebar">
+		<div class="slide-button on">
+			<i class="iconfont">&#xe6ba;</i>
+			<p>全部</p>
+		</div>
+		<div class="slide-button">
+			<i class="iconfont">&#xe6ba;</i>
+			<p>已付款</p>
+		</div>
+		<div class="slide-button">
+			<i class="iconfont">&#xe680;</i>
+			<p>制作中</p>
+		</div>
+		<div class="slide-button">
+			<i class="iconfont">&#xe6ba;</i>
+			<p>已发货</p>
+		</div>
+		<div class="slide-button">
+			<i class="iconfont">&#xe611;</i>
+			<p>维修中</p>
+		</div>
+		<div class="slide-button">
+			<i class="iconfont">&#xe61f;</i>
+			<p>已关闭</p>
+		</div>
+		<div class="slide-button">
+			<i class="iconfont">&#xe60e;</i>
+			<p>特殊</p>
+		</div>
+	</section>
+	<section class="main-board">
+		<div class="function-board">
+			<div class="choose-message">
+				<span class="">发送给：</span>
+				<select name="" id="" class="choose-list">
+					<option value="">下单客户联系方式</option>
+					<option value="">收件客户联系方式</option>
+				</select>
+				<span class="choose-title">使用模板为：</span>
+				<select name="" id="send_message" class="choose-list">
+					<option value="发货通知">发货通知类消息</option>
+					<option value="新品上市">新品上市类消息</option>
+					<!-- <option value="逢年过节">逢年过节类消息</option> -->
+				</select>
+				<div class="message-detail">
+					<p class="message-model on" id="ship_message">
+						亲爱的客户<span class="blue-text">［此处读取客户姓名］</span>，您好！<br>
+						您所订购的<span class="blue-text">［此处读取产品名称］［此处读取产品数量］［此处读取产品颜色］</span>，已经通过顺丰速递发货了，顺丰快递单号<span class="blue-text">［此处读取发货快递单号］</span>，谢谢您对于 VINCI 的支持！有任何问题请联系我们的客服电话：400-088-4624，祝您使用愉快～
+					</p>
+					<p class="message-model" id="new_product_message">
+						亲爱的用户<span class="blue-text">［此处读取客户姓名］</span>，您好！<br>
+						VINCI又出新品<span class="blue-text">［此处读取新品名称］</span>啦，记得当时的智能头机给您带来的音乐快感么，看看他们又有怎样的创新和改进，让我们一起 Think Different! 轻戳 www.vinci.im 尝鲜吧!
+					</p>
+					<p class="message-model" id="festival_message">
+						逢年过节短信模板
+					</p>
+				</div>
+				<div class="send-to">
+					以下是您选择要群发的<span id="receiver_num">0</span>位客户
+				</div>
+			</div>
+			<div class="send-button-board">
+				<i class="iconfont send-button">&#xe632;</i>
+				<p>群发</p>
+				<i class="iconfont cancel-button">&#xe61f;</i>
+				<p>取消</p>
+			</div>
+		</div>
+		<div class="order-detail">
+			<div class="explain">请提交筛选信息</div>
+			<table class="order-detail-table">
+				
+			</table>
+		</div>
+	</section>
+	<div class="submit-modal">
+		<div class="submit-modal-container">
+			<div class="submit-modal-header">
+				<span>提交</span>
+			</div>
+			<div class="submit-modal-content">
+				<p>确定要向250客户发送发货通知类信息吗？</p>
+			</div>
+			<div class="submit-modal-footer">
+				<button class="submit-modal-confirm">确认</button>
+				<button class="submit-modal-cancel">取消</button>
+			</div>
+		</div>
+	</div>
+	<script src="/scripts/jquery.min.js"></script>
+	<script src="/scripts/bootstrap.min.js"></script>
+	<script src="/scripts/handlebars.min.js"></script>
+	<script src="/scripts/renderAjax.min.js"></script>
+	<script src="/scripts/groupSending/groupSending.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset = utf-8">
+    <meta name="author" content="loch">
+    <meta name="keywords" content="vinci,客服,后台,inspero">
+    <meta name="description" content="vinci 客服后台管理系统">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no"/>
+	<title>vinci 客服后台管理系统</title>
+	<link rel="stylesheet" href="/styles/bootstrap.min.css">
+	<link rel="stylesheet" href="/styles/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="/styles/layout.min.css">
+	<link rel="stylesheet" href="/styles/index.min.css">
+	<style>
+		@font-face {font-family: 'iconfont';
+		    src: url('iconfont/iconfont.eot'); /* IE9*/
+		    src: url('iconfont/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		    url('iconfont/iconfont.woff') format('woff'), /* chrome、firefox */
+		    url('iconfont/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+		    url('iconfont/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+		}
+		.iconfont {
+		  	font-family:"iconfont" !important;
+		  	font-size:16px;
+		  	font-style:normal;
+		  	-webkit-font-smoothing: antialiased;
+		 	-webkit-text-stroke-width: 0.2px;
+		  	-moz-osx-font-smoothing: grayscale;
+		}
+	</style>
+</head>
+<body>
+	<section class="header">
+		<div class="header-left">
+			<i class="iconfont vinci-logo">&#xe604;</i>
+			<span class="vinci-slogan">VINCI</span>
+			<i class="iconfont vertical-bar">&#xe62b;</i>
+			<span class="user-num">客服001号</span>
+		</div>
+		<div class="header-right">
+			<span class="header-service">客服中心</span>
+			<i class="iconfont vertical-bar">&#xe62b;</i>
+			<span class="user-name">刘小双</span>
+		</div>
+	</section>
+	<section class="slidebar">
+		<div class="slide-button on" name="all">
+			<i class="iconfont">&#xe6ba;</i>
+			<p>全部</p>
+		</div>
+		<div class="slide-button" name="paid">
+			<i class="iconfont">&#xe6ba;</i>
+			<p>已付款</p>
+		</div>
+		<div class="slide-button" name="making">
+			<i class="iconfont">&#xe680;</i>
+			<p>制作中</p>
+		</div>
+		<div class="slide-button" name="ship">
+			<i class="iconfont">&#xe6ba;</i>
+			<p>已发货</p>
+		</div>
+		<div class="slide-button" name="fix">
+			<i class="iconfont">&#xe611;</i>
+			<p>维修中</p>
+		</div>
+		<div class="slide-button" name="close">
+			<i class="iconfont">&#xe61f;</i>
+			<p>已关闭</p>
+		</div>
+		<div class="slide-button" name="special">
+			<i class="iconfont">&#xe60e;</i>
+			<p>特殊</p>
+		</div>
+	</section>
+	<section class="main-board">
+		<div class="function-bar">
+			<form action="" class="search-bar">
+				<select name="" id="" class="search-select">
+					<option value="recipient">收件人姓名</option>
+					<option value="address_phonenum">收件人电话</option>
+					<option value="phonenum">下单人电话</option>
+					<option value="order_id">订单号</option>
+					<option value="express_id">货物快递单号</option>
+					<option value="payment_id">支付单号</option>
+					<option value="invoice_express_id">发票快递单号</option>	
+				</select>
+				<input type="text" class="search-input" placeholder="请选择搜索类别后，在此输入搜索信息">
+				<button class="submit-search" type="button">搜索</button>
+			</form>
+			<div class="main-function">
+				<div class="function-button">
+					<i class="iconfont">&#xe629;</i>
+					<p>导出</p>
+				</div>
+				<div class="function-button">
+					<i class="iconfont">&#xe638;</i>
+					<p>导入</p>
+				</div>
+				<div class="function-button">
+					<i class="iconfont" id="group_sending">&#xe629;</i>
+					<p>群发</p>
+				</div>
+				<div class="function-button">
+					<i class="iconfont" id="batch_change_start">&#xe638;</i>
+					<p>修改</p>
+				</div>
+			</div>
+			<div class="filter-bar">
+				<p class="filter-detail"><span id="filter_detail_tag">经过筛选</span>的选项，选出了<span class="order-num">0</span>个订单，共计<span class="product-num">0</span>台产品</p>
+				<div class="filter-choice">
+					<div class="filter-option width5">
+						<p class="filter-board-button filter-order-status">订单状态</p>
+						<i class="iconfont filter-board-button filter-order-status">&#xe741;</i>
+						<i class="iconfont batch-change-icon batch-order-status">&#xe638;</i>
+						<div class="filter-order-status-board filter-board">
+							<i class="iconfont triangle">&#xe73a;</i>
+							<h5>筛选选项</h5>
+							<form action="">
+								<input value="已付款" class="order-status-options" name="" type="checkbox" id="order_status_paid" checked>
+								<label for="order_status_paid" class="order-status-content">已付款</label>
+								<input value="制作中" class="order-status-options" name="" type="checkbox" id="order_status_making" checked="checked">
+								<label for="order_status_making" class="order-status-content">制作中</label>
+								<input value="已发货" class="order-status-options" name="" type="checkbox" id="order_status_ship" checked>
+								<label for="order_status_ship" class="order-status-content">已发货</label>
+								<input value="维修中" class="order-status-options" name="" type="checkbox" id="order_status_fix" checked>
+								<label for="order_status_fix" class="order-status-content">维修中</label>
+								<input value="已关闭" class="order-status-options" name="" type="checkbox" id="order_status_close" checked>
+								<label for="order_status_close" class="order-status-content">已关闭</label>
+								<input value="未付款" class="order-status-options" name="" type="checkbox" id="order_status_not_pay" checked>
+								<label for="order_status_not_pay" class="order-status-content">未付款</label>
+							</form>
+							<div class="filter-error-info"></div>
+							<div class="select-button">
+								<button class="confirm-button" id="submit_order_status">确定</button>
+								<i class="iconfont">&#xe62b;</i>
+								<button class="cancel-button">取消</button>
+							</div>
+						</div>
+						<div class="batch-change-order-status-board batch-change-board">
+							<i class="iconfont triangle">&#xe73a;</i>
+							<h5>修改“订单状态”</h5>
+							<form action="">
+								<input value="已付款" class="order-status-options" name="orderStatus" type="radio" id="order_status_change_paid">
+								<label for="order_status_change_paid" class="order-status-content">已付款</label>
+								<input value="制作中" class="order-status-options" name="orderStatus" type="radio" id="order_status_change_making">
+								<label for="order_status_change_making" class="order-status-content">制作中</label>
+								<input value="已发货" class="order-status-options" name="orderStatus" type="radio" id="order_status_change_ship">
+								<label for="order_status_change_ship" class="order-status-content">已发货</label>
+								<input value="维修中" class="order-status-options" name="orderStatus" type="radio" id="order_status_change_fix">
+								<label for="order_status_change_fix" class="order-status-content">维修中</label>
+								<input value="已关闭" class="order-status-options" name="orderStatus" type="radio" id="order_status_change_close">
+								<label for="order_status_change_close" class="order-status-content">已关闭</label>
+								<input value="未付款" class="order-status-options" name="orderStatus" type="radio" id="order_status_change_not_pay">
+								<label for="order_status_change_not_pay" class="order-status-content">未付款</label>
+							</form>
+							<div class="filter-error-info"></div>
+							<div class="select-button">
+								<button class="confirm-button" id="submit_batch_order_status">确定</button>
+								<i class="iconfont">&#xe62b;</i>
+								<button class="cancel-button">取消</button>
+							</div>
+						</div>
+					</div>
+					<div class="filter-option width5">
+						<p class="filter-board-button filter-order-create">下单日期</p>
+						<i class="iconfont filter-board-button filter-order-create">&#xe741;</i>
+						<div class="filter-order-create-board filter-board">
+							<i class="iconfont triangle">&#xe73a;</i>
+							<h5>筛选选项</h5>
+							<div class="date-choose">
+								<form action="">
+									<p>从</p>
+									<input type="number" class="year" id="create_from_year" value="2014">
+									<label for="create_from_year">年</label>
+									<input type="number" class="month" id="create_from_month" value="1">
+									<label for="create_from_month">月</label>
+									<input type="number" class="day" id="create_from_day" value="1">
+									<label for="create_from_day">日</label>
+									<p>到</p>
+									<input type="number" class="year" id="create_to_year" value="2016">
+									<label for="create_to_year">年</label>
+									<input type="number" class="month" id="create_to_month" value="1">
+									<label for="create_to_month">月</label>
+									<input type="number" class="day" id="create_to_day" value="1">
+									<label for="create_to_day">日</label>
+								</form>
+							</div>
+							<div class="filter-error-info"></div>
+							<div class="select-button">
+								<button class="confirm-button" id="submit_order_create">确定</button>
+								<i class="iconfont">&#xe62b;</i>
+								<button class="cancel-button">取消</button>
+							</div>
+						</div>
+					</div>
+					<div class="filter-option width10">
+						<p class="filter-board-button filter-color">订单详情</p>
+						<i class="iconfont filter-board-button filter-color">&#xe741;</i>
+						<div class="filter-color-board filter-board">
+							<i class="iconfont triangle">&#xe73a;</i>
+							<h5>筛选选项</h5>
+							<form action="">
+								<input class="color-options" value="1" name="" type="checkbox" id="color_options_1" checked>
+								<label for="color_options_1" class="color-content">白色</label>
+								<input class="color-options" value="3" name="" type="checkbox" id="color_options_3" checked>
+								<label for="color_options_3" class="color-content">红色</label>
+								<input class="color-options" value="4" name="" type="checkbox" id="color_options_4" checked>
+								<label for="color_options_4" class="color-content">紫色</label>
+								<input class="color-options" value="5" name="" type="checkbox" id="color_options_5" checked>
+								<label for="color_options_5" class="color-content">绿色</label>
+								<input class="color-options" value="2" name="" type="checkbox" id="color_options_2" checked>
+								<label for="color_options_2" class="color-content">黄色</label>
+								<input class="color-options" value="6" name="" type="checkbox" id="color_options_6" checked>
+								<label for="color_options_6" class="color-content">黑色</label>
+							</form>
+							<div class="filter-error-info"></div>
+							<div class="select-button">
+								<button class="confirm-button" id="submit_color">确定</button>
+								<i class="iconfont">&#xe62b;</i>
+								<button class="cancel-button">取消</button>
+							</div>
+						</div>
+					</div>
+					<div class="filter-option width8">
+						<p class="fix">客户信息</p>
+					</div>
+					<div class="filter-option width8">
+						<p class="filter-board-button filter-special-need">特殊加工</p>
+						<i class="iconfont filter-board-button filter-special-need">&#xe741;</i>
+						<div class="filter-special-need-board filter-board">
+							<i class="iconfont triangle">&#xe73a;</i>
+							<h5>筛选选项</h5>
+							<span class="on special-need-options">特殊加工</span>
+							<span>/</span>
+							<span class="on special-need-options">无特殊加工</span>
+							<div class="filter-error-info"></div>
+							<div class="select-button">
+								<button class="confirm-button" id="submit_special_need">确定</button>
+								<i class="iconfont">&#xe62b;</i>
+								<button class="cancel-button">取消</button>
+							</div>
+						</div>
+					</div>
+					<div class="filter-option width5">
+						<p class="filter-board-button filter-delivery-date">交货日期</p>
+						<i class="iconfont filter-board-button filter-delivery-date">&#xe741;</i>
+						<i class="iconfont batch-change-icon batch-delivery-date">&#xe638;</i>
+						<div class="filter-delivery-date-board filter-board">
+							<i class="iconfont triangle">&#xe73a;</i>
+							<h5>筛选选项</h5>
+							<div class="date-choose">
+								<form action="">
+									<input type="number" class="year" id="delivery_year" value="2015">
+									<label for="delivery_year">年</label>
+									<input type="number" class="month" id="delivery_month" value="1">
+									<label for="delivery_month">月</label>
+									<input type="number" class="day" id="delivery_day" value="1">
+									<label for="delivery_day">日</label>
+									<input type="checkbox" name="need-delivery-date" id="need_delivery_date" class="not-need-filter" checked>
+									<label for="need_delivery_date" class="not-need-filter-text">不筛选交货日期</label>
+								</form>
+							</div>
+							<div class="filter-error-info"></div>
+							<div class="select-button">
+								<button class="confirm-button" id="submit_delivery_date">确定</button>
+								<i class="iconfont">&#xe62b;</i>
+								<button class="cancel-button">取消</button>
+							</div>
+						</div>
+						<div class="batch-change-delivery-date-board batch-change-board">
+							<i class="iconfont triangle">&#xe73a;</i>
+							<h5>修改“交货日期”</h5>
+							<div class="date-choose">
+								<form action="">
+									<input type="number" class="year" id="batch_delivery_year">
+									<label for="batch_delivery_year">年</label>
+									<input type="number" class="month" id="batch_delivery_month">
+									<label for="batch_delivery_month">月</label>
+									<input type="number" class="day" id="batch_delivery_day">
+									<label for="batch_delivery_day">日</label>
+								</form>
+							</div>
+							<div class="filter-error-info"></div>
+							<div class="select-button">
+								<button class="confirm-button" id="submit_batch_delivery_date">确定</button>
+								<i class="iconfont">&#xe62b;</i>
+								<button class="cancel-button">取消</button>
+							</div>
+						</div>
+					</div>
+					<div class="filter-option width10">
+						<p class="fix">收件信息</p>
+					</div>
+					<div class="filter-option width3">
+						<p class="filter-board-button filter-status">状态</p>
+						<i class="iconfont filter-board-button filter-status">&#xe741;</i>
+						<div class="filter-status-board filter-board">
+							<i class="iconfont triangle">&#xe73a;</i>
+							<h5>筛选选项</h5>
+							<span class="on status-options">普通</span>
+							<span>/</span>
+							<span class="on status-options">加急</span>
+							<div class="filter-error-info"></div>
+							<div class="select-button">
+								<button class="confirm-button" id="submit_status">确定</button>
+								<i class="iconfont">&#xe62b;</i>
+								<button class="cancel-button">取消</button>
+							</div>
+						</div>
+					</div>
+					<div class="filter-option width3">
+						<p class="filter-board-button filter-ship-from">发货地点</p>
+						<i class="iconfont filter-board-button filter-ship-from">&#xe741;</i>
+						<i class="iconfont batch-change-icon batch-ship-from">&#xe638;</i>
+						<div class="filter-ship-from-board filter-board">
+							<i class="iconfont triangle">&#xe73a;</i>
+							<h5>筛选选项</h5>
+							<span class="on ship-from-options">北京</span>
+							<span>/</span>
+							<span class="on ship-from-options">深圳</span>
+							<span>/</span>
+							<span class="on ship-from-options">未定</span>
+							<div class="filter-error-info"></div>
+							<div class="select-button">
+								<button class="confirm-button" id="submit_ship_from">确定</button>
+								<i class="iconfont">&#xe62b;</i>
+								<button class="cancel-button">取消</button>
+							</div>
+						</div>
+						<div class="batch-change-ship-from-board batch-change-board">
+							<i class="iconfont triangle">&#xe73a;</i>
+							<h5>修改“发货地点”</h5>
+							<span class="batch-ship-from-options">北京</span>
+							<span>/</span>
+							<span class="batch-ship-from-options">深圳</span>
+							<span>/</span>
+							<span class="on batch-ship-from-options">未定</span>
+							<div class="filter-error-info"></div>
+							<div class="select-button">
+								<button class="confirm-button" id="submit_batch_ship_from">确定</button>
+								<i class="iconfont">&#xe62b;</i>
+								<button class="cancel-button">取消</button>
+							</div>
+						</div>
+					</div>
+					<div class="filter-option width5">
+						<p class="filter-board-button filter-ship-date">发货批次</p>
+						<i class="iconfont filter-board-button filter-ship-date">&#xe741;</i>
+						<i class="iconfont batch-change-icon batch-ship-date">&#xe638;</i>
+						<div class="filter-ship-date-board filter-board">
+							<i class="iconfont triangle">&#xe73a;</i>
+							<h5>筛选选项</h5>
+							<div class="date-choose">
+								<form action="">
+									<input type="number" class="year" id="ship_year" value="2015">
+									<label for="ship_year">年</label>
+									<input type="number" class="month" id="ship_month" value="1">
+									<label for="ship_month">月</label>
+									<input type="number" class="day" id="ship_day" value="1">
+									<label for="ship_day">日</label>
+									<input type="checkbox" name="need-ship-date" id="need_ship_date" class="not-need-filter" checked>
+									<label for="need_ship_date">不筛选发货批次</label>
+								</form>
+							</div>
+							<div class="filter-error-info"></div>
+							<div class="select-button">
+								<button class="confirm-button" id="submit_ship_date">确定</button>
+								<i class="iconfont">&#xe62b;</i>
+								<button class="cancel-button">取消</button>
+							</div>
+						</div>
+						<div class="batch-change-ship-date-board batch-change-board">
+							<i class="iconfont triangle">&#xe73a;</i>
+							<h5>修改“发货批次”</h5>
+							<div class="date-choose">
+								<form action="">
+									<input type="number" class="year" id="batch_ship_year">
+									<label for="batch_ship_year">年</label>
+									<input type="number" class="month" id="batch_ship_month">
+									<label for="batch_ship_month">月</label>
+									<input type="number" class="day" id="batch_ship_day">
+									<label for="batch_ship_day">日</label>
+								</form>
+							</div>
+							<div class="filter-error-info"></div>
+							<div class="select-button">
+								<button class="confirm-button" id="submit_batch_ship_date">确定</button>
+								<i class="iconfont">&#xe62b;</i>
+								<button class="cancel-button">取消</button>
+							</div>
+						</div>
+					</div>
+					<div class="filter-option width10">
+						<p class="filter-board-button filter-invoice">发票信息</p>
+						<i class="iconfont filter-board-button filter-invoice">&#xe741;</i>
+						<div class="filter-invoice-board filter-board">
+							<i class="iconfont triangle">&#xe73a;</i>
+							<h5>筛选选项</h5>
+							<span class="on invoice-options">不需要发票</span>
+							<span>/</span>
+							<span class="on invoice-options">公司</span>
+							<span>/</span>
+							<span class="on invoice-options">个人</span>
+							<div class="filter-error-info"></div>
+							<div class="select-button">
+								<button class="confirm-button" id="submit_invoice">确定</button>
+								<i class="iconfont">&#xe62b;</i>
+								<button class="cancel-button">取消</button>
+							</div>
+						</div>
+					</div>
+					<div class="filter-option width10">
+						<p class="filter-board-button filter-express-status">快递信息</p>
+						<i class="iconfont filter-board-button filter-express-status">&#xe741;</i>
+						<i class="iconfont batch-change-icon batch-express-status">&#xe638;</i>
+						<div class="filter-express-status-board filter-board">
+							<i class="iconfont triangle">&#xe73a;</i>
+							<h5>筛选选项</h5>
+							<span class="on express-status-options">已发货</span>
+							<span>/</span>
+							<span class="on express-status-options">未发货</span>
+							<div class="filter-error-info"></div>
+							<div class="select-button">
+								<button class="confirm-button" id="submit_express_status">确定</button>
+								<i class="iconfont">&#xe62b;</i>
+								<button class="cancel-button">取消</button>
+							</div>
+						</div>
+						<!-- <div class="batch-change-express-status-board batch-change-board">
+							<i class="iconfont triangle">&#xe73a;</i>
+							<h5>修改“快递信息”</h5>
+							<span class="on express-status-options">已发货</span>
+							<span>/</span>
+							<span class="on express-status-options">未发货</span>
+							<div class="filter-error-info"></div>
+							<div class="select-button">
+								<button class="confirm-button" id="submit_batch_express_status">确定</button>
+								<i class="iconfont">&#xe62b;</i>
+								<button class="cancel-button">取消</button>
+							</div>
+						</div> -->
+					</div>
+					<div class="filter-option width8">
+						<p class="filter-board-button filter-payment-method">支付信息</p>
+						<i class="iconfont filter-board-button filter-payment-method">&#xe741;</i>
+						<div class="filter-payment-method-board filter-board">
+							<i class="iconfont triangle">&#xe73a;</i>
+							<h5>筛选选项</h5>
+							<span class="on payment-method-options">微信</span>
+							<span>/</span>
+							<span class="on payment-method-options">支付宝</span>
+							<div class="filter-error-info"></div>
+							<div class="select-button">
+								<button class="confirm-button" id="submit_payment_method">确定</button>
+								<i class="iconfont">&#xe62b;</i>
+								<button class="cancel-button">取消</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="order-detail">
+			<div class="explain">请提交筛选信息</div>
+			<table class="order-detail-table">
+				
+			</table>
+		</div>
+	</section>
+	<nav class="page-select">
+		<ul class="page-row">
+			<li class="page-num selected">1</li>
+			<li class="page-num">2</li>
+			<li class="page-num">3</li>
+			<li class="page-num">4</li>
+			<li class="page-num">5</li>
+			<li class="page-num">6</li>
+			<li class="page-num">7</li>
+			<li class="page-num">8</li>
+			<li class="page-num">9</li>
+		</ul>
+	</nav>
+	<div class="submit-modal">
+		<div class="submit-modal-container">
+			<div class="submit-modal-header">
+				<span>提交修改</span>
+			</div>
+			<div class="submit-modal-content">
+				<p>确认提交对订单的批量修改？</p>
+			</div>
+			<div class="submit-modal-footer">
+				<button class="submit-modal-confirm">确认</button>
+				<button class="submit-modal-cancel">取消</button>
+			</div>
+		</div>
+	</div>
+	<script src="/scripts/jquery.min.js"></script>
+	<script src="/scripts/bootstrap.min.js"></script>
+	<script src="/scripts/handlebars.min.js"></script>
+	<script src="/scripts/base.min.js"></script>
+	<script src="/scripts/renderAjax.js"></script>
+	<script src="/scripts/verify.js"></script>
+	<script src="/scripts/filterAjax.js"></script>
+	<script src="/scripts/changeOrder.js"></script>
+	<script src="/scripts/batchAjax.js"></script>
+	<script src="/scripts/index.min.js"></script>
+</body>
+</html>

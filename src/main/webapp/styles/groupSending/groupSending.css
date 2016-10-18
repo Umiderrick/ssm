@@ -1,0 +1,215 @@
+/* slidebar 样式 & 悬浮样式 & 焦点样式 */
+.slidebar {
+  position: fixed;
+  padding-top: 50px;
+  left: 0px;
+  float: left;
+  display: block;
+  height: 100%;
+  background-color: #99C0FF;
+}
+.slidebar .on {
+  background-color: #ffffff!important;
+  border: 1px solid #E1ECFF!important;
+  color: #99C0FF !important;
+}
+.slidebar .slide-button {
+  height: 100px;
+  width: 50px;
+  background-color: #99C0FF;
+  color: #ffffff;
+  text-align: center;
+  padding-top: 24px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+}
+.slidebar .slide-button i {
+  font-size: 30px;
+}
+.slidebar .slide-button p {
+  font-size: 12px;
+}
+.slidebar .slide-button:hover {
+  color: #99C0FF;
+  background-color: #ffffff;
+  border: 1px solid #E1ECFF;
+}
+.main-board {
+  height: 100%;
+  width: 100%;
+  background-color: #F7F7F7;
+  padding: 90px 0px 0px 120px;
+}
+.main-board .explain {
+  position: fixed;
+  font-size: 80px;
+  color: rgba(255, 255, 255, 0.9);
+  top: 50%;
+  left: 34%;
+  z-index: 1;
+}
+/* 订单详情表格 */
+.order-detail {
+  position: relative;
+  z-index: 3;
+}
+.order-detail .order-detail-table {
+  position: relative;
+  z-index: 3;
+  margin-bottom: 100px;
+  width: 100%;
+  text-align: center;
+}
+.order-detail .order-detail-table .width5 {
+  width: 5%;
+}
+.order-detail .order-detail-table .width10 {
+  width: 10%;
+}
+.order-detail .order-detail-table .width8 {
+  width: 8%;
+}
+.order-detail .order-detail-table .width3 {
+  width: 3%;
+}
+.order-detail .order-detail-table .width6 {
+  width: 6%;
+}
+.order-detail .order-detail-table .order-detail-row {
+  cursor: pointer;
+  font-size: 13px;
+  height: 80px;
+  width: 100%;
+  border-bottom: 1px solid #F7F7F7;
+}
+.order-detail .order-detail-table .order-detail-row .batch-changed {
+  color: red;
+  font-weight: 700;
+}
+.order-detail .order-detail-table .order-detail-row .col-remark .remark {
+  width: 40%;
+  height: 80px;
+  font-size: 18px;
+  padding-top: 10px;
+  color: rgba(255, 255, 255, 0.9);
+  background-color: #99C0FF;
+  cursor: pointer;
+}
+.order-detail .order-detail-table .order-detail-row .col-remark .remark-content {
+  display: none;
+  height: 80px;
+  padding: 10px 5px 10px 5px;
+  cursor: pointer;
+}
+.order-detail .order-detail-table .order-detail-row:hover {
+  color: red;
+}
+.order-detail .order-detail-table .order-detail-row .batch-change-tag-hide {
+  position: relative;
+  color: #FFB42E;
+  left: -3px;
+  font-size: 20px;
+  display: none;
+}
+.order-detail .order-detail-table .order-detail-row .batch-change-tag-show {
+  position: relative;
+  color: #FFB42E;
+  left: -3px;
+  font-size: 20px;
+}
+.order-detail .order-detail-table .blue-row .col-1 {
+  background-color: #DEEBFF;
+}
+.order-detail .order-detail-table .blue-row .col-2 {
+  background-color: #F3F8FF;
+}
+.order-detail .order-detail-table .pink-row .col-1 {
+  background-color: #FFD9D9;
+}
+.order-detail .order-detail-table .pink-row .col-2 {
+  background-color: #FFEEEE;
+}
+.order-detail .order-detail-table .yellow-row .col-1 {
+  background-color: #FFFEDC;
+}
+.order-detail .order-detail-table .yellow-row .col-2 {
+  background-color: #FFFFF3;
+}
+.order-detail .order-detail-table .green-row .col-1 {
+  background-color: #D2FFED;
+}
+.order-detail .order-detail-table .green-row .col-2 {
+  background-color: #EEFFF8;
+}
+.order-detail .order-detail-table .gray-row .col-1 {
+  background-color: #EFEFEF;
+}
+.order-detail .order-detail-table .gray-row .col-2 {
+  background-color: #F7F7F7;
+}
+.order-detail .order-detail-table .white-row .col-1 {
+  background-color: #ffffff!important;
+}
+.order-detail .order-detail-table .white-row .col-2 {
+  background-color: #ffffff!important;
+}
+/* 功能板样式 */
+.function-board .choose-message {
+  display: inline-block;
+  width: 87%;
+  margin-bottom: 20px;
+}
+.function-board .choose-message .choose-title {
+  margin-left: 60px;
+}
+.function-board .choose-message .choose-list {
+  height: 40px;
+  display: inline-block;
+  width: 160px;
+  padding: 0px;
+  outline: none;
+  border: 2px solid #ccc;
+}
+.function-board .choose-message .message-detail {
+  margin: 40px 20px;
+}
+.function-board .choose-message .message-detail .blue-text {
+  color: #5A91FF;
+}
+.function-board .choose-message .message-detail p {
+  display: none;
+}
+.function-board .choose-message .message-detail .on {
+  display: block;
+}
+.function-board .choose-message #receiver_num {
+  color: #5A91FF;
+}
+.function-board .send-button-board {
+  display: inline-block;
+  width: 10%;
+  text-align: center;
+  vertical-align: top;
+}
+.function-board .send-button-board i {
+  font-size: 55px;
+  cursor: pointer;
+}
+.function-board .send-button-board p {
+  margin: -5px;
+}
+.function-board .send-button-board .send-button {
+  color: #5A91FF;
+}
+.function-board .send-button-board .send-button:hover {
+  color: #99C0FF;
+}
+.function-board .send-button-board .cancel-button {
+  color: #F16767;
+}
+.function-board .send-button-board .cancel-button:hover {
+  color: #EA9C9C;
+}
