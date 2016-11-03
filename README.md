@@ -1,7 +1,3 @@
-# ssm
-learning quick4j
-basic Crud
+# w
 use idea
-redis session control
-mysql
-MetroNic
+Springboot+mybatis+spring
