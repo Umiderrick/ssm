@@ -8,6 +8,6 @@
          <setting name="logPrefix" value="dao."/>
      </settings>
     <typeAliases>
-        <typeAlias type="im.vinci.core.metatype.impl.BaseDto" alias="dto"/>
+        <typeAlias type="core.metatype.impl.BaseDto" alias="dto"/>
     </typeAliases>
 </configuration>
